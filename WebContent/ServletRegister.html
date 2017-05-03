@@ -1,0 +1,89 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="UTF-8">
+<title>welcome to register</title>
+<script>
+		function myfun() {
+			var regex = /^[a-zA-Z ]{2,30}$/;
+			var ctrl = document.getElementById("nam1").value;
+			var id = document.getElementById("id").value;
+			var regexid = /^[0-9]{3}$/;
+			if (!regex.test(ctrl)) {
+				alert("name is not valid");
+				return false;
+			}
+			if (!regexid.test(id)) {
+				alert("id must contain 3 Digits");
+				return false;
+			}
+			var regexage = /^[0-9]{1,3}$/;
+			var age = document.getElementById("age").value;
+			if (!regexage.test(age)) {
+				alert("enter valid age ");
+				return false;
+			}
+			var regexMobNo = /^[0-9]{10}$/;
+			var mobNo = document.getElementById("mobNo").value;
+			if (!regexMobNo.test(mobNo)) {
+				alert("mobile number must be 10 digits");
+				return false;
+			}
+			var regexPassword = /^[a-zA-Z0-9]{5,10}$/;
+			var Password = document.getElementById("Password").value;
+			if (!regexPassword.test(Password)) {
+				alert("password must be in the range 5-10 digits");
+				return false;
+			}
+		}
+	</script>
+</head>
+<body bgcolor="EE82EE">
+	<form action="reg" method="post" onsubmit="return myfun()">
+	<!-- 	<left> -->
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" name="nm" placeholder="Enter Name"
+					required id="nam1"></td>
+			</tr>
+			<tr>
+				<td>ID:</td>
+				<td><input type="text" name="id" placeholder="Eneter ID"
+					required id="id"></td>
+			</tr>
+			<tr>
+				<td>Age:</td>
+				<td><input type="text" name="age" placeholder="Enter age"
+					required id="age"></td>
+			</tr>
+			<tr>
+				<td>Salary:</td>
+				<td><input type="text" name="sal" placeholder="Enter salary"
+					required></td>
+			</tr>
+			<tr>
+				<td>Mob No:</td>
+				<td><input type="text" name="mn" placeholder="Enter Mob NO"
+					required id="mobNo"></td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><input type="email" name="em" placeholder="Enter Email"
+					required></td>
+			</tr>
+			<tr>
+				<td>password:</td>
+				<td><input type="password" name="ps"
+					placeholder="Enter password" required id="Password"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="register"></td>
+			</tr>
+		</table>
+<!-- 		</left>
+ -->	</form>
+	
+</body>
+</html>
